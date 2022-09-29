@@ -23,6 +23,9 @@ void main() {
     mockRemoteDataScource = MockRemoteDataScource();
     mockLocalDataScource = MockLocalDataScource();
     mockNetworkInfo = MockNetworkInfo();
-    repository = NumberTriviaRepositoryImpl();
+    repository = NumberTriviaRepositoryImpl(
+        localDataSource: mockLocalDataScource,
+        remoteDataSource: mockRemoteDataScource,
+        networkInfo: mockNetworkInfo);
   });
 }
